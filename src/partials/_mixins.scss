@@ -1,0 +1,32 @@
+@mixin v-margins($v : 10px, $h : 0) {
+    margin: $v $h;
+}
+
+@mixin wrapper($width){
+    width: $width;
+    margin: auto;
+}
+
+@mixin title-font {
+    font-family: $brand-font;
+    font-size: $medium;
+    font-weight: 700;
+    color: $accent;
+    text-align: center;
+}
+
+@mixin caption-font {
+    font-family: $brand-font;
+    font-size: $medium;
+    font-weight: 400;
+    color: $accent;
+    text-align: center;
+}
+
+@mixin classification-font {
+    font-family: $brand-font;
+    font-size: $xs;
+    font-weight: 400;
+    color: $accent;
+    text-align: center;
+}

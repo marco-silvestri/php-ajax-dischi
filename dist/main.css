@@ -1,0 +1,110 @@
+/* Brand colors */
+
+/* Fonts */
+
+/* Wrappers */
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #828081;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex-grow: 2;
+}
+
+header {
+  background-color: #1E392A;
+}
+
+header .app__navmenu {
+  width: 70%;
+  margin: auto;
+}
+
+header .app__navmenu img {
+  height: 30px;
+  width: 30px;
+}
+
+.app__show-albums {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+}
+
+.app__show-albums__album {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #E9C893;
+  background-color: #1E392A;
+  margin: 15px 5px;
+  padding: 5px 5px;
+}
+
+.app__show-albums__album__title {
+  font-family: "Catamaran", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #E9C893;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.app__show-albums__album__cover {
+  width: 150px;
+  height: 140px;
+  margin: auto;
+  margin: 10px 0;
+}
+
+.app__show-albums__album__author {
+  font-family: "Catamaran", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #E9C893;
+  text-align: center;
+}
+
+.app__show-albums__album__classification__genre,
+.app__show-albums__album__classification__year {
+  font-family: "Catamaran", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #E9C893;
+  text-align: center;
+}
+
+footer {
+  background-color: #1E392A;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+footer span {
+  font-family: "Catamaran", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #E9C893;
+  text-align: center;
+}
+

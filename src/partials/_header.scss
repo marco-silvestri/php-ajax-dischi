@@ -1,0 +1,10 @@
+header {
+    background-color: $black;
+    .app__navmenu {
+        @include wrapper($main-width);
+        & img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+}

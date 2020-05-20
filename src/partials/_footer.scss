@@ -1,0 +1,9 @@
+footer {
+    background-color: $black;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    & span {
+        @include caption-font;
+    }
+}

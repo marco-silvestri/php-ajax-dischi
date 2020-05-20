@@ -1,0 +1,36 @@
+.app__show-albums{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    @include wrapper($main-width);
+    &__album{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: $accent;
+        background-color: $black;
+        @include v-margins(15px, 5px);
+        padding: 5px 5px;
+        &__title {
+            @include title-font;
+            @include v-margins;
+        }
+        &__cover {
+            width: 150px;
+            height: 140px;
+            margin: auto;
+            @include v-margins;
+        }
+        &__author {
+            @include caption-font;
+        }
+        &__classification{
+            &__genre,
+            &__year {
+                @include classification-font;
+            }
+        }
+    }    
+}
