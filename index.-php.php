@@ -1,6 +1,6 @@
 <?php
 /* Data-import */
-require_once __DIR__ . "/dist/scripts/data.php"
+require_once "dist/scripts/data.php"
 ?>
 
 <!DOCTYPE html>

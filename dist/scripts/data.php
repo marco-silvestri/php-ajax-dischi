@@ -73,7 +73,4 @@ $albums = [
         'cover_path' => 'https://upload.wikimedia.org/wikipedia/en/0/0b/ShaniaTwainComeOnOver.png'
     ],
 ];
-
-//header('Content-Type: application/json');
-//echo json_encode($albums);
 ?>
