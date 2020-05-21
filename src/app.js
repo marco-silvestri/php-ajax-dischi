@@ -6,19 +6,26 @@ $(document).ready(function () {
     
     // jQuery refs
     var playground = $('.app__show-albums');
+    var input = $('.app__navmenu__filter input');
+    var button = $('.app__navmenu__filter button');
 
     // Data refs
     var dataSource = 'dist/scripts/ajax.php';
 
-    loaderData(dataSource, 'GET', playground, template)
+    loaderData(dataSource, 'GET', playground, template);
+    
+    button.click( function() {
+
+    })
 
 }); //END of DOC READY
 
-function getData (source, type = 'GET'){
+function getData (source, type = 'POST'){
     var result =
         $.ajax({
             type: type,
             url: source,
+            data : 'Foo Fighters',
             success: function(response) {
                 console.log('DB queried, it was ticklish');
                 console.table(response);

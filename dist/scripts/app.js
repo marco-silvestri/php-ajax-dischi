@@ -98,17 +98,21 @@ $(document).ready(function () {
   var source = $('#albums-template').html();
   var template = Handlebars.compile(source); // jQuery refs
 
-  var playground = $('.app__show-albums'); // Data refs
+  var playground = $('.app__show-albums');
+  var input = $('.app__navmenu__filter input');
+  var button = $('.app__navmenu__filter button'); // Data refs
 
   var dataSource = 'dist/scripts/ajax.php';
   loaderData(dataSource, 'GET', playground, template);
+  button.click(function () {});
 }); //END of DOC READY
 
 function getData(source) {
-  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'GET';
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'POST';
   var result = $.ajax({
     type: type,
     url: source,
+    data: 'Foo Fighters',
     success: function success(response) {
       console.log('DB queried, it was ticklish');
       console.table(response);

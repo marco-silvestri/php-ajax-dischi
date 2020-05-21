@@ -12,6 +12,10 @@
         <header>
             <div class="app__navmenu">
                 <img src="dist/img/spotify-logo.png" alt="Spotify LOGO">
+                <div class="app__navmenu__filter">
+                    <input type="text">
+                    <button>Filter</button>
+                </div>
             </div>
         </header>
         <main>
