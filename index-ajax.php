@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap">
-    <title>Spitify</title>
+    <title>Spotify - Marco Silvestri 2020</title>
 </head>
 <body>
     <div id="app">

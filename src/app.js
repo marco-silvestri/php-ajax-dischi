@@ -15,11 +15,19 @@ $(document).ready(function () {
 
     loaderData(dataSource, 'GET', playground, template);
     
-    button.click( function() {
+    button.click(() => {
         var queryConstructor = '?author=' + input.val();
         cleanAll(playground);
         loaderData(dataFilter, 'GET', playground, template, queryConstructor);
-    })
+    });
+
+    input.keydown(e => { 
+        if (e.which === 13){
+            var queryConstructor = '?author=' + input.val();
+            cleanAll(playground);
+            loaderData(dataFilter, 'GET', playground, template, queryConstructor);
+        }
+    });
 
 }); //END of DOC READY
 
@@ -31,7 +39,6 @@ function getData (source, type, callParams){
             url: source + callParams,
             success: function(response) {
                 console.log('DB queried, it was ticklish');
-                console.table(response);
             },
             error: function() {
                 var err = 'DB was uncooperative, kill him';
@@ -58,8 +65,12 @@ function loaderData(source, type, destination, template, callParams) {
     Promise.all([
         getData(source, type, callParams),
     ]).then(result => {
-        for (var i = 0; i < result[0].length; i++){
-            printAlbums(result[0], template, destination, i);
+        if (result[0].length == 0){
+            destination.html('<h2 class="app__show-albums__album__title"> No matching result :( </h2>');
+        } else {
+            for (var i = 0; i < result[0].length; i++){
+                printAlbums(result[0], template, destination, i);
+            }
         }
     })
 }

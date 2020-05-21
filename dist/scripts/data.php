@@ -72,5 +72,19 @@ $albums = [
         'genre' => 'Country',
         'cover_path' => 'https://upload.wikimedia.org/wikipedia/en/0/0b/ShaniaTwainComeOnOver.png'
     ],
+    [
+        'title' => '19',
+        'author' => 'Adele',
+        'year' => 2008,
+        'genre' => 'Pop',
+        'cover_path' => 'https://upload.wikimedia.org/wikipedia/en/f/f8/Adele_-_19.png'
+    ],
+    [
+        'title' => 'Chill Out',
+        'author' => 'John Lee Hooker',
+        'year' => 2008,
+        'genre' => 'Pop',
+        'cover_path' => 'https://upload.wikimedia.org/wikipedia/en/5/58/Chill_Out_%28John_Lee_Hooker_album%29.jpg'
+    ],
 ];
 ?>

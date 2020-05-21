@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: #828081;
+  background-color: #233237;
 }
 
 #app {
@@ -27,12 +27,16 @@ main {
 }
 
 header {
-  background-color: #1E392A;
+  background-color: #18121E;
 }
 
 header .app__navmenu {
   width: 70%;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
 }
 
 header .app__navmenu img {
@@ -54,8 +58,8 @@ header .app__navmenu img {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  color: #E9C893;
-  background-color: #1E392A;
+  color: #EAC67A;
+  background-color: #18121E;
   margin: 15px 5px;
   padding: 5px 5px;
 }
@@ -64,7 +68,7 @@ header .app__navmenu img {
   font-family: "Catamaran", sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #E9C893;
+  color: #EAC67A;
   text-align: center;
   margin: 10px 0;
 }
@@ -80,7 +84,7 @@ header .app__navmenu img {
   font-family: "Catamaran", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  color: #E9C893;
+  color: #EAC67A;
   text-align: center;
 }
 
@@ -89,12 +93,12 @@ header .app__navmenu img {
   font-family: "Catamaran", sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #E9C893;
+  color: #EAC67A;
   text-align: center;
 }
 
 footer {
-  background-color: #1E392A;
+  background-color: #18121E;
   height: 50px;
   width: 100%;
   text-align: center;
@@ -104,7 +108,7 @@ footer span {
   font-family: "Catamaran", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  color: #E9C893;
+  color: #EAC67A;
   text-align: center;
 }
 
