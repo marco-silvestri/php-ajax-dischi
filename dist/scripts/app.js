@@ -103,16 +103,20 @@ $(document).ready(function () {
   var button = $('.app__navmenu__filter button'); // Data refs
 
   var dataSource = 'dist/scripts/ajax.php';
+  var dataFilter = 'dist/scripts/ajax-filter.php';
   loaderData(dataSource, 'GET', playground, template);
-  button.click(function () {});
+  button.click(function () {
+    var queryConstructor = '?author=' + input.val();
+    cleanAll(playground);
+    loaderData(dataFilter, 'GET', playground, template, queryConstructor);
+  });
 }); //END of DOC READY
 
-function getData(source) {
-  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'POST';
+function getData(source, type, callParams) {
+  callParams = callParams || '';
   var result = $.ajax({
     type: type,
-    url: source,
-    data: 'Foo Fighters',
+    url: source + callParams,
     success: function success(response) {
       console.log('DB queried, it was ticklish');
       console.table(response);
@@ -138,15 +142,16 @@ function printAlbums(response, template, destination, index) {
   destination.append(output);
 }
 
-function loaderData(source) {
-  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'GET';
-  var destination = arguments.length > 2 ? arguments[2] : undefined;
-  var template = arguments.length > 3 ? arguments[3] : undefined;
-  Promise.all([getData(source, type)]).then(function (result) {
+function loaderData(source, type, destination, template, callParams) {
+  Promise.all([getData(source, type, callParams)]).then(function (result) {
     for (var i = 0; i < result[0].length; i++) {
       printAlbums(result[0], template, destination, i);
     }
   });
+}
+
+function cleanAll(destination) {
+  destination.html('');
 }
 
 /***/ }),

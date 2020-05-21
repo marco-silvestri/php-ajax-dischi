@@ -11,21 +11,24 @@ $(document).ready(function () {
 
     // Data refs
     var dataSource = 'dist/scripts/ajax.php';
+    var dataFilter = 'dist/scripts/ajax-filter.php';
 
     loaderData(dataSource, 'GET', playground, template);
     
     button.click( function() {
-
+        var queryConstructor = '?author=' + input.val();
+        cleanAll(playground);
+        loaderData(dataFilter, 'GET', playground, template, queryConstructor);
     })
 
 }); //END of DOC READY
 
-function getData (source, type = 'POST'){
+function getData (source, type, callParams){
+    callParams = callParams || ''; 
     var result =
         $.ajax({
             type: type,
-            url: source,
-            data : 'Foo Fighters',
+            url: source + callParams,
             success: function(response) {
                 console.log('DB queried, it was ticklish');
                 console.table(response);
@@ -51,12 +54,16 @@ function printAlbums(response, template, destination, index){
     destination.append(output);
 }
 
-function loaderData(source, type = 'GET', destination, template) {
+function loaderData(source, type, destination, template, callParams) {
     Promise.all([
-        getData(source, type),
+        getData(source, type, callParams),
     ]).then(result => {
         for (var i = 0; i < result[0].length; i++){
             printAlbums(result[0], template, destination, i);
         }
     })
+}
+
+function cleanAll (destination){
+    destination.html('');
 }
